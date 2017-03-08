@@ -12,7 +12,7 @@ RUN apk update && apk add \
         make \
         git
 
-# Get CNTK Binary Distribution
+# Get source codes and build
 RUN git clone https://github.com/zhanxw/rvtests.git && \
     cd rvtests && make
 
