@@ -10,7 +10,7 @@ RUN apk update && apk add \
         g++ \
         gfortran \
         make \
-        git
+        git \
     # Library
         zlib-dev 
 
