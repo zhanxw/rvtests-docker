@@ -14,7 +14,7 @@ RUN apk update && apk add \
         git
 
 # Get CNTK Binary Distribution
-RUN git clone https://github.com/zhanxw/rvtests.git &&
+RUN git clone https://github.com/zhanxw/rvtests.git && \
     cd rvtests && make
 
 ENV PATH=/rvtests/executable:$PATH 
