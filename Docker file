@@ -1,4 +1,3 @@
-# Ubuntu 14.04, CUDA 8.0
 FROM alpine:latest
 
 LABEL maintainer "Xiaowei Zhan <zhanxw@umich.edu>"
