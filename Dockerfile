@@ -11,6 +11,8 @@ RUN apk update && apk add \
         gfortran \
         make \
         git
+    # Library
+        zlib-dev 
 
 # Get source codes and build
 RUN git clone https://github.com/zhanxw/rvtests.git && \
