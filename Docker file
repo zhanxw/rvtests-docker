@@ -10,12 +10,21 @@ RUN apk update && apk add \
         g++ \
         gfortran \
         make \
-        git
+        git \
+    # Tools for automatic tests \
+        R R-dev\
+        python2 \
 
-# Get CNTK Binary Distribution
+#setup R configs
+RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
+RUN Rscript -e "install.packages('testthat')"
+RUN Rscript -e "install.packages('mvtnorm')"
+
+# Get and build RVTESTS
 RUN git clone https://github.com/zhanxw/rvtests.git && \
-    cd rvtests && make
+    cd rvtests && make debug
+RUN (for i in base libVcf regression;do make -C ${i}/test; make -C ${i}/test check; done;)
 
-ENV PATH=/rvtests/executable:$PATH 
+ENV PATH=/rvtests/executable/dbg:$PATH 
 
 WORKDIR /rvtests
