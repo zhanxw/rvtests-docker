@@ -1,4 +1,5 @@
-# rvtests-docker
+How to use
+----------
 
 For **an end user of RVTESTS**, 
 
@@ -15,7 +16,8 @@ All executables are under `/rvtests/executable/dbg`.
 
 
 
-=Example=
+Example
+-------
 
 Assume your phenotype file (pheno) and genotype files (example.vcf) are located under `/home/zhanxw/rvtests/example`.
 First run docker:
