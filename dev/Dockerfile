@@ -15,7 +15,10 @@ RUN apk update && apk add \
         zlib-dev \
     # Tools for automatic tests 
         R R-dev\
-        python2 
+        python2 \
+        bash
+        
+SHELL ["/bin/bash", "-c"]
 
 #setup R configs
 RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
