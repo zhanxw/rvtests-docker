@@ -27,8 +27,8 @@ RUN Rscript -e "install.packages('mvtnorm')"
 
 # Get and build RVTESTS
 RUN git clone https://github.com/zhanxw/rvtests.git && \
-    cd rvtests && make debug
-RUN (for i in base libVcf regression;do make -C ${i}/test; make -C ${i}/test check; done;)
+    cd rvtests && make debug && \
+    (for i in base libVcf regression;do make -C ${i}/test; make -C ${i}/test check; done;)
 
 ENV PATH=/rvtests/executable/dbg:$PATH 
 
