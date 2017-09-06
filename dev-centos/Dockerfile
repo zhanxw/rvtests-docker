@@ -2,7 +2,7 @@ FROM centos:latest
 
 LABEL maintainer "Xiaowei Zhan <zhanxw@umich.edu>"
 
-RUN yum -y install epel-release && yum update && yum -y install \
+RUN yum -y install epel-release && yum -y update && yum -y install \
     # General
         wget \
     # Compiler
@@ -16,7 +16,7 @@ RUN yum -y install epel-release && yum update && yum -y install \
     # Tools for automatic tests 
         R R-devel\
         python2 \
-        bash
+        bash && yum clean all
         
 SHELL ["/bin/bash", "-c"]
 
