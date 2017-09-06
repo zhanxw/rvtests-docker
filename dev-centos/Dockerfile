@@ -5,6 +5,7 @@ LABEL maintainer "Xiaowei Zhan <zhanxw@umich.edu>"
 RUN yum -y install epel-release && yum -y update && yum -y install \
     # General
         wget \
+        bzip2 \
     # Compiler
         gcc \
         g++ \
