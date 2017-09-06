@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     # Tools for automatic tests 
         r-base r-base-dev\
         python2.7 \
-        bash
+        bash && apt-get clean
         
 SHELL ["/bin/bash", "-c"]
 
