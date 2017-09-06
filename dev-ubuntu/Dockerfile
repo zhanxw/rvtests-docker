@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
         make \
         git \
     # Library
-        zlib-dev \
+        zlib1g-dev \
     # Tools for automatic tests 
         r-base r-base-dev\
         python2.7 \
