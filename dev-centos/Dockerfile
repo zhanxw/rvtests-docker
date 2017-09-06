@@ -2,7 +2,7 @@ FROM centos:latest
 
 LABEL maintainer "Xiaowei Zhan <zhanxw@umich.edu>"
 
-RUN yum install -y epel-release && yum update && yum install -y \
+RUN yum -y install epel-release && yum update && yum -y install \
     # General
         wget \
     # Compiler
