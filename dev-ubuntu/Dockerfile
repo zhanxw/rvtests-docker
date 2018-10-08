@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 LABEL maintainer "Xiaowei Zhan <zhanxw@umich.edu>"
 
-RUN apt-get update && apt-get install -y \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     # General
         wget \
     # Compiler
