@@ -2,7 +2,12 @@ FROM ubuntu:latest
 
 LABEL maintainer "Xiaowei Zhan <zhanxw@umich.edu>"
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
+# avoid interaction with tzdata
+# https://serverfault.com/questions/683605/docker-container-time-timezone-will-not-reflect-changes
+ENV TZ=America/Chicago
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get update && apt-get install -y \
     # General
         wget \
     # Compiler
